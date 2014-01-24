@@ -50,7 +50,7 @@ func NewHTTPTransporter(prefix string, transport http.Transport) *HTTPTransporte
 		requestVotePath:      joinPath(prefix, "/requestVote"),
 		snapshotPath:         joinPath(prefix, "/snapshot"),
 		snapshotRecoveryPath: joinPath(prefix, "/snapshotRecovery"),
-		Transport:            &http.Transport{DisableKeepAlives: false},
+		Transport:            transport,
 	}
 	t.httpClient.Transport = t.Transport
 	return t
