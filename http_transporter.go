@@ -42,7 +42,7 @@ type HTTPMuxer interface {
 //------------------------------------------------------------------------------
 
 // Creates a new HTTP transporter with the given path prefix.
-func NewHTTPTransporter(prefix string) *HTTPTransporter {
+func NewHTTPTransporter(prefix string, transport http.Transport) *HTTPTransporter {
 	t := &HTTPTransporter{
 		DisableKeepAlives:    false,
 		prefix:               prefix,
